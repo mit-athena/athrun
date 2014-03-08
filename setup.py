@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name='attachandrun',
-      version='10.2',
+      version='10.3.1',
       description='Athena utility for scripts to run a program from a locker',
       author='Alexander Chernyakhovsky',
       scripts=['attachandrun']
