@@ -2,7 +2,7 @@ Source: debathena-athrun
 Section: debathena/net
 Priority: extra
 Maintainer: Debathena Project <debathena@mit.edu>
-Build-Depends: debhelper (>= 7), bash-completion, python-support
+Build-Depends: debhelper (>= 7), bash-completion, dh-python, python2.7
 Standards-Version: 3.9.3
 
 Package: debathena-athrun
@@ -25,6 +25,7 @@ Package: debathena-attachandrun
 Architecture: all
 Provides: attachandrun
 Depends: ${misc:Depends}, ${python:Depends}, debathena-attach, python
+X-Python-Version: 2.7
 Description: An Athena utility for scripts to run a program from a locker
  The attachandrun utility allows a script to robustly run a program from
  a specified locker.
