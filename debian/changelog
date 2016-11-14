@@ -1,3 +1,9 @@
+debathena-athrun (10.3.1-0debathena4) unstable; urgency=medium
+
+  * Create /bin/attachandrun symlink in postinst, to support merged /usr.
+
+ -- Anders Kaseorg <andersk@mit.edu>  Mon, 14 Nov 2016 17:29:28 -0500
+
 debathena-athrun (10.3.1-0debathena3) unstable; urgency=medium
 
   * Replace dh-python with a correct versioned dependency on python
