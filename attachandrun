@@ -77,7 +77,7 @@ def main():
 
     # Actually execute the program, 
     error = execute(program_location, argv)
-    print >>sys.stderr, "%s: %s" % (progname, os.strerror(error))
+    print >>sys.stderr, "%s: %s: %s" % (progname, program_location, os.strerror(error))
     
 if __name__ == '__main__':
     try:
