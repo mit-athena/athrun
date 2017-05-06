@@ -1,3 +1,9 @@
+debathena-athrun (10.3.2-0debathena1) unstable; urgency=medium
+
+  * attachandrun: Give a better error message on exec failure.
+
+ -- Anders Kaseorg <andersk@mit.edu>  Sat, 06 May 2017 17:51:28 -0400
+
 debathena-athrun (10.3.1-0debathena4) unstable; urgency=medium
 
   * Create /bin/attachandrun symlink in postinst, to support merged /usr.
