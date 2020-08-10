@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+from __future__ import print_function
 import errno
 import os
 import subprocess
@@ -13,19 +14,19 @@ def extract(args):
     return (args[0], args[1:])
 
 def usage():
-    print >>sys.stderr, 'Usage: %s [--check|-c] locker program program_name [args...]' % (progname,)
+    print('Usage: %s [--check|-c] locker program program_name [args...]' % (progname,), file=sys.stderr)
     sys.exit(1)
 
 def invoke(args):
     try:
         process = subprocess.Popen(args,
-                                   stdout=subprocess.PIPE)
+                                   stdout=subprocess.PIPE, universal_newlines=True)
         result, _ = process.communicate()
         if process.returncode != 0:
             raise Exception("Non-zero return code from '%s'" % (args[0],))
         return result.strip()
     except subprocess.CalledProcessError as e:
-        print >>sys.stderr, "Unable to invoke '%s'." % (args[0],)
+        print("Unable to invoke '%s'." % (args[0],), file=sys.stderr)
         sys.exit(1)
 
 def attach(locker):
@@ -77,11 +78,11 @@ def main():
 
     # Actually execute the program, 
     error = execute(program_location, argv)
-    print >>sys.stderr, "%s: %s: %s" % (progname, program_location, os.strerror(error))
+    print("%s: %s: %s" % (progname, program_location, os.strerror(error)), file=sys.stderr)
     
 if __name__ == '__main__':
     try:
         main()
     except Exception as e:
-        print >>sys.stderr, "%s: %s" % (progname, e)
+        print("%s: %s" % (progname, e), file=sys.stderr)
         usage()
